@@ -1,0 +1,12 @@
+_pimcore:
+    resource: "@PimcoreCoreBundle/Resources/config/routing.yml"
+
+app:
+    resource: "../src/Controller/"
+    type: annotation
+
+# bundle_home:
+#     path: /bundle-rojan
+#     controller: bundles/Javra/RojanBundle/Controller/DefaultController::indexAction
+#     methods: GET
+

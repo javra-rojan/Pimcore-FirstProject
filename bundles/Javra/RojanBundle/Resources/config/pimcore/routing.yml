@@ -1,0 +1,5 @@
+javra_rojan:
+    resource: "@JavraRojanBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

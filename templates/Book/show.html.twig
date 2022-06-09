@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<div>
+		{{ pimcore_input('headline', {'width': 540}) }}
+
+		{# {% set myObject = pimcore_object(49) %}
+		<h3>
+			{{ myObject.title }}
+		</h3> #}
+
+		{# {% set myImage = Asset::getById(2) %} #}
+		{# <div>
+			<img src="{{ myObject.image }}"/>
+		</div> #}
+
+
+		{% for i in pimcore_block('content').iterator %}
+			{{ pimcore_input('inputP')}}
+			{{ pimcore_wysiwyg('content_wys') }}
+		{% endfor %}
+	</div>
+
+{% endblock %}
+

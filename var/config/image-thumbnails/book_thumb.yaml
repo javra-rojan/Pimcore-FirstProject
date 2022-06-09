@@ -1,0 +1,31 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    book_thumb:
+                        items:
+                            -
+                                method: rotate
+                                arguments:
+                                    angle: 45
+                            -
+                                method: frame
+                                arguments:
+                                    width: 11
+                                    height: 11
+                                    forceResize: false
+                        medias: {  }
+                        name: book_thumb
+                        description: ''
+                        group: ''
+                        format: JPEG
+                        quality: 85
+                        highResolution: 0.0
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1654756268
+                        creationDate: 1654756168
+                        preserveAnimation: false
