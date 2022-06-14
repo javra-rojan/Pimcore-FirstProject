@@ -22,7 +22,7 @@ class DefaultController extends FrontendController
     public function seed(Request $request)
     {
         DataFixture::seedDataObject();
-        // DataFixture::seedAsset();
+        DataFixture::seedAsset();
 
         return new Response('Seedeed ok');
     }
@@ -35,7 +35,6 @@ class DefaultController extends FrontendController
     {   
         $books = new DataObject\Book\Listing();
         $data = [];
-        // $this->views->books = $books;
         foreach($books as $book){
             $data[] = [
                 'id' => $book->getId(),

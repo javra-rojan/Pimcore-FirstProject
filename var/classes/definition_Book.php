@@ -7,7 +7,7 @@
  * Fields Summary:
  * - title [input]
  * - image [image]
- * - categories [advancedManyToManyObjectRelation]
+ * - categories [manyToManyObjectRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Book',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1655191381,
+   'modificationDate' => 1655196783,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -103,7 +103,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -120,7 +120,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'uploadPath' => '',
           )),
           2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\AdvancedManyToManyObjectRelation::__set_state(array(
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
              'name' => 'categories',
              'title' => 'Categories',
              'tooltip' => '',
@@ -131,7 +131,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'advancedManyToManyObjectRelation',
+             'fieldtype' => 'manyToManyObjectRelation',
              'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
@@ -141,27 +141,24 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'classes' => 
             array (
+              0 => 
+              array (
+                'classes' => '',
+              ),
             ),
              'pathFormatterClass' => '',
              'width' => '',
              'height' => '',
              'maxItems' => '',
-             'visibleFields' => NULL,
+             'visibleFields' => 
+            array (
+            ),
              'allowToCreateNewObject' => false,
              'optimizedAdminLoading' => false,
              'enableTextSelection' => false,
              'visibleFieldDefinitions' => 
             array (
             ),
-             'allowedClassId' => NULL,
-             'columns' => 
-            array (
-            ),
-             'columnKeys' => 
-            array (
-            ),
-             'enableBatchEdit' => false,
-             'allowMultipleAssignments' => false,
           )),
         ),
          'locked' => false,
