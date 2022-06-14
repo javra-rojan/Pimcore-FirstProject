@@ -6,26 +6,32 @@ pimcore:
                     book_thumb:
                         items:
                             -
+                                method: grayscale
+                                arguments: {  }
+                            -
                                 method: rotate
                                 arguments:
-                                    angle: 45
+                                    angle: -23
                             -
-                                method: frame
+                                method: setBackgroundColor
                                 arguments:
-                                    width: 11
-                                    height: 11
-                                    forceResize: false
+                                    color: '#FFF'
+                            -
+                                method: resize
+                                arguments:
+                                    width: 200
+                                    height: 200
                         medias: {  }
                         name: book_thumb
                         description: ''
                         group: ''
-                        format: JPEG
+                        format: PNG
                         quality: 85
                         highResolution: 0.0
                         preserveColor: false
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1654756268
+                        modificationDate: 1655097058
                         creationDate: 1654756168
                         preserveAnimation: false

@@ -4,15 +4,19 @@
 	<div>
 		{{ pimcore_input('headline', {'width': 540}) }}
 
-		{# {% set myObject = pimcore_object(49) %}
+		{% set myObject = pimcore_object(70) %}
 		<h3>
 			{{ myObject.title }}
-		</h3> #}
+		</h3>
+		{# {% set image = myObject.image %} #}
+
+
+
 
 		{# {% set myImage = Asset::getById(2) %} #}
-		{# <div>
-			<img src="{{ myObject.image }}"/>
-		</div> #}
+		<div>
+			<img src="{{ myObject.image.thumbnail('book_thumb') }}"/>
+		</div>
 
 
 		{% for i in pimcore_block('content').iterator %}
@@ -20,6 +24,5 @@
 			{{ pimcore_wysiwyg('content_wys') }}
 		{% endfor %}
 	</div>
-
 {% endblock %}
 

@@ -21,10 +21,8 @@ class DefaultController extends FrontendController
      */
     public function seed(Request $request)
     {
-        for($i=0; $i<10; $i++){
-            DataFixture::seedDataObject();
-            DataFixture::seedAsset();
-        }
+        DataFixture::seedDataObject();
+        // DataFixture::seedAsset();
 
         return new Response('Seedeed ok');
     }
@@ -33,10 +31,22 @@ class DefaultController extends FrontendController
      * @Route("/javra_rojan/books", name="bundle_book_list")
      * 
      */
-    public function indexAction(DeleteHelper $helper)
+    public function indexAction()
     {   
-        // $helper->checkHere();
-        return new Response( '200' ) ;
+        $books = new DataObject\Book\Listing();
+        $data = [];
+        // $this->views->books = $books;
+        foreach($books as $book){
+            $data[] = [
+                'id' => $book->getId(),
+                'key' => $book->getKey(),
+                'title' => $book->getTitle()
+            ];
+        }
+        return $this->render('Book/list.html.twig', [
+            'books' => $books
+        ]);
+        // return new JsonResponse($data) ;
     }
 
     /**
@@ -53,11 +63,11 @@ class DefaultController extends FrontendController
     /**
      * @Route("javra_rojan/thumbnail", name="book_thumbnail")
      */
-    public function FunctionName()
+    public function thumbAction()
     {
-        $asset = Asset::getById(67);
+        $asset = Asset::getById(108);
         echo $asset->getThumbnail('book_thumb')->getHtml();
         exit;
     }
- 
+
 }

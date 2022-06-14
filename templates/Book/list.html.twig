@@ -1,0 +1,7 @@
+{% for book in books %}
+<div>
+    id = {{ book.getId }} 
+    <img src="{{ book.image.thumbnail('book_thumb') }}" alt="" height="100">  
+</div>
+    
+{% endfor %}

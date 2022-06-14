@@ -14,7 +14,7 @@ class BookImageUpdateCommand extends AbstractCommand{
 
     public function configure()
     {
-        $this->setName('app:BookImageAssetloadCommand')
+        $this->setName('app:BookImageAssetLoadCommand')
                 ->setDescription('upload image into book object');
     }
 
@@ -22,7 +22,7 @@ class BookImageUpdateCommand extends AbstractCommand{
     {
         $image = new Asset();
         $image->setParentId(4);
-        $image->setFileName("BookAssetSeed");
+        $image->setFileName("BookAssetSeed" .rand(1,100));
         $image->setData(file_get_contents("https://images.unsplash.com/photo-1654720947098-5ab1fffc7d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"));
         $image->save();
 
@@ -32,6 +32,7 @@ class BookImageUpdateCommand extends AbstractCommand{
         $objects->setUnpublished(true);
         $objects->load();
         foreach( $objects as $object ){
+            $object->setPublished(true);
             $object->setImage(Asset::getById($image->getId()));
             $object->save();
             $output->writeln("Object " .$object->getId(). "updated with image");

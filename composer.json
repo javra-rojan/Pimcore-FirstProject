@@ -9,6 +9,7 @@
   },
   "require": {
     "pimcore/bundle-generator": "^1.0",
+    "pimcore/data-importer": "^1.6",
     "pimcore/pimcore": "^10.0"
   },
   "require-dev": {
