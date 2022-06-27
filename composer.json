@@ -22,7 +22,10 @@
     "psr-4": {
       "App\\": "src/",
       "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
-      "Javra\\RojanBundle\\": "bundles/Javra/RojanBundle"
+      "Javra\\RojanBundle\\": "bundles/Javra/RojanBundle",
+      "Javra\\CalculateBundle\\": "bundles/Javra/CalculateBundle",
+      "Javra\\TaskBundle\\": "bundles/Javra/TaskBundle",
+      "Javra\\TaskBundle\\EventListener\\" : "bundles/Javra/TaskBundle/EventListener"
     }
   },
   "scripts": {

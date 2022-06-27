@@ -78,6 +78,6 @@ services:
     #         - { name: templating.helper, alias: fooBar }
 
     # Example event listener for objects
-    # App\EventListener\TestListener:
-    #     tags:
-    #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+    Javra\TaskBundle\EventListener\ProductCreateListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: onObjectPreUpdate }

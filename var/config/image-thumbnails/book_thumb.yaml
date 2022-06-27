@@ -9,10 +9,6 @@ pimcore:
                                 method: grayscale
                                 arguments: {  }
                             -
-                                method: rotate
-                                arguments:
-                                    angle: -23
-                            -
                                 method: setBackgroundColor
                                 arguments:
                                     color: '#FFF'
@@ -32,6 +28,6 @@ pimcore:
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1655097058
+                        modificationDate: 1655720108
                         creationDate: 1654756168
                         preserveAnimation: false

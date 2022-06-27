@@ -1,0 +1,5 @@
+javra_task:
+    resource: "@JavraTaskBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

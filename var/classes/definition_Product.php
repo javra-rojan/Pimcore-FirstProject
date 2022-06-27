@@ -3,7 +3,7 @@
 /**
  * Inheritance: no
  * Variants: no
- * category of books
+ * contains list of product with types
  *
  * Fields Summary:
  * - name [input]
@@ -13,15 +13,17 @@
  * - status [booleanSelect]
  * - added_date [datetime]
  * - product_type [select]
+ * - is_simple [checkbox]
+ * - accessories [objectbricks]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '3',
-   'name' => 'Category',
-   'description' => 'category of books',
+   'id' => '6',
+   'name' => 'Product',
+   'description' => 'contains list of product with types',
    'creationDate' => 0,
-   'modificationDate' => 1655880385,
+   'modificationDate' => 1655891766,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -77,7 +79,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -108,7 +110,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -139,7 +141,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -170,7 +172,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -201,7 +203,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -244,7 +246,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -265,7 +267,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           6 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
              'name' => 'product_type',
-             'title' => 'Product _type',
+             'title' => 'Product  type',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -303,6 +305,84 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'dynamicOptions' => false,
              'defaultValueGenerator' => '',
           )),
+          7 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+             'name' => 'is_simple',
+             'title' => 'is _simple',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => NULL,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'checkbox',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'defaultValueGenerator' => '',
+          )),
+          8 => 
+          Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+             'name' => 'Layout',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => '',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'permissions' => NULL,
+             'children' => 
+            array (
+              0 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
+                 'name' => 'accessories',
+                 'title' => 'accessories',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'objectbricks',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'allowedTypes' => 
+                array (
+                  0 => 'Memory',
+                  1 => 'Storage',
+                ),
+                 'maxItems' => '',
+                 'border' => false,
+              )),
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
+             'icon' => '',
+             'labelWidth' => 0,
+             'labelAlign' => 'left',
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -328,7 +408,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelAlign' => 'left',
   )),
    'icon' => '',
-   'previewUrl' => '/category',
+   'previewUrl' => '',
    'group' => '',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',

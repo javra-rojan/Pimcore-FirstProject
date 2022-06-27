@@ -1,0 +1,5 @@
+javra_calculate:
+    resource: "@JavraCalculateBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

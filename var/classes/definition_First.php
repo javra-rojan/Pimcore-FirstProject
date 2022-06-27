@@ -5,18 +5,17 @@
  * Variants: no
  *
  * Fields Summary:
- * - title [input]
- * - image [image]
- * - categories [manyToManyObjectRelation]
+ * - num [numeric]
+ * - secondNumber [manyToOneRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'Book',
+   'id' => '4',
+   'name' => 'First',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1655196783,
+   'modificationDate' => 1655374579,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -65,18 +64,18 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'title',
-             'title' => 'Title',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'num',
+             'title' => 'Num',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'input',
+             'fieldtype' => 'numeric',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -86,43 +85,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
              'defaultValue' => NULL,
-             'columnLength' => 100,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'image',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'width' => '',
-             'height' => '',
-             'uploadPath' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'name' => 'categories',
-             'title' => 'Categories',
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'name' => 'secondNumber',
+             'title' => 'Second Number',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -131,7 +106,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'manyToManyObjectRelation',
+             'fieldtype' => 'manyToOneRelation',
              'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
@@ -143,20 +118,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               array (
-                'classes' => '',
+                'classes' => 'Second',
               ),
             ),
              'pathFormatterClass' => '',
              'width' => '',
-             'height' => '',
-             'maxItems' => '',
-             'visibleFields' => 
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
             array (
             ),
-             'allowToCreateNewObject' => false,
-             'optimizedAdminLoading' => false,
-             'enableTextSelection' => false,
-             'visibleFieldDefinitions' => 
+             'documentsAllowed' => false,
+             'documentTypes' => 
             array (
             ),
           )),
@@ -185,7 +159,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelAlign' => 'left',
   )),
    'icon' => '',
-   'previewUrl' => '/book',
+   'previewUrl' => '',
    'group' => '',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
