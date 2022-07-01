@@ -21,24 +21,26 @@ class FileImportCommand extends AbstractCommand
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-    { 
-        $time = Carbon::now();      
+    {
+        $time = Carbon::now();
         $file = fopen('/home/rojan/Downloads/products.csv', "r");
         //dump first row
         fgetcsv($file);
+        $parent_obj = Service::createFolderByPath('Task/CSVImport' .$time);
+        $output->writeln("Folder created: " .$parent_obj);
 
         while( $row = fgetcsv($file) ){
-            $this->createProduct($row, $time);
+            $this->createProduct($row, $parent_obj);
         }
         $output->writeln('Product CSV imported successfully!');
         fclose($file);
         return 0;
     }
 
-    private function createProduct($row, $time){    
+    private function createProduct($row, $parent_obj){
         $product = new Product();
         $product->setKey($row[0]);
-        $product->setParent(Service::createFolderByPath('Task/CSVImport '. $time));
+        $product->setParent($parent_obj);
         $product->setName($row[0]);
         $product->setPrice((float)$row[1]);
         $product->setModel($row[2]);
@@ -46,6 +48,6 @@ class FileImportCommand extends AbstractCommand
         $product->setStatus($row[4]);
         $product->setAdded_date( Carbon::parse( new DateTime(($row[5]), new DateTimeZone('Asia/Kathmandu')) ) );
         $product->setProduct_type($row[6]);
-        $product->save(); 
+        $product->save();
     }
 }

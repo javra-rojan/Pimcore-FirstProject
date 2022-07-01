@@ -10,7 +10,7 @@ pimcore.plugin.JavraTaskBundle = Class.create(pimcore.plugin.admin, {
     },
 
     pimcoreReady: function (params, broker) {
-        // alert("JavraTaskBundle ready!");
+        alert("JavraTaskBundle ready!");
     }
 });
 
