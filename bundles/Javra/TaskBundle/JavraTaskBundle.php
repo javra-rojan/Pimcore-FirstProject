@@ -10,6 +10,7 @@ class JavraTaskBundle extends AbstractPimcoreBundle
     {
         return [
             '/bundles/javratask/js/pimcore/startup.js',
+            '/bundles/javratask/js/pimcore/addMainNavMenuItem.js',
             '/bundles/javratask/js/pimcore/custom.js',
         ];
     }
