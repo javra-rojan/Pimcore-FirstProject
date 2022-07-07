@@ -12,10 +12,10 @@ pimcore:
             - bundles/PIM/ObjectWithVariableDatatypeBundle
 
     objects:
-        class_definitions:
+        class_definitions:bundles
             data:
                 map:
-                    myDataType: bundles\PIM\ObjectWithVariableDatatypeBundle\Pimcore\Model\DataObject\ClassDefinition\Data\ObjectWithVariableDatatype
+                    myDataType: \PIM\ObjectWithVariableDatatypeBundle\Pimcore\Model\DataObject\ClassDefinition\Data\ObjectWithVariableDatatype
 
 
 # IMPORTANT Notice!
