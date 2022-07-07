@@ -1,0 +1,5 @@
+pim_relations:
+    resource: "@PIMRelationsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

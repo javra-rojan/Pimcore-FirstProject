@@ -5,18 +5,18 @@
  * Variants: no
  *
  * Fields Summary:
- * - title [input]
- * - image [image]
- * - categories [manyToManyObjectRelation]
+ * - name [input]
+ * - roles [manyToManyObjectRelation]
+ * - vehicles [reverseObjectRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '1',
-   'name' => 'Book',
+   'id' => '7',
+   'name' => 'Person',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1656932100,
+   'modificationDate' => 1657171023,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -66,8 +66,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'title',
-             'title' => 'Title',
+             'name' => 'name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -86,7 +86,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
              'defaultValue' => NULL,
-             'columnLength' => 100,
+             'columnLength' => 190,
              'regex' => '',
              'regexFlags' => 
             array (
@@ -96,33 +96,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'image',
-             'title' => 'Image',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'image',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'width' => '',
-             'height' => '',
-             'uploadPath' => '',
-          )),
-          2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'name' => 'categories',
-             'title' => 'Categories',
+             'name' => 'roles',
+             'title' => 'Roles',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -135,7 +111,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
-             'visibleSearch' => true,
+             'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
@@ -143,20 +119,61 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 => 
               array (
-                'classes' => 'Category',
+                'classes' => 'Role',
               ),
             ),
              'pathFormatterClass' => '',
              'width' => '',
              'height' => '',
              'maxItems' => '',
-             'visibleFields' => 'name',
-             'allowToCreateNewObject' => true,
+             'visibleFields' => 
+            array (
+            ),
+             'allowToCreateNewObject' => false,
              'optimizedAdminLoading' => false,
-             'enableTextSelection' => true,
+             'enableTextSelection' => false,
              'visibleFieldDefinitions' => 
             array (
             ),
+          )),
+          2 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ReverseObjectRelation::__set_state(array(
+             'name' => 'vehicles',
+             'title' => 'Own vehicles(reverse relation)',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'reverseObjectRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'height' => '',
+             'maxItems' => '',
+             'visibleFields' => NULL,
+             'allowToCreateNewObject' => true,
+             'optimizedAdminLoading' => false,
+             'enableTextSelection' => false,
+             'visibleFieldDefinitions' => 
+            array (
+            ),
+             'ownerClassName' => 'Vehicle',
+             'ownerClassId' => NULL,
+             'ownerFieldName' => 'owned_by',
+             'lazyLoading' => true,
           )),
         ),
          'locked' => false,
@@ -183,7 +200,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelAlign' => 'left',
   )),
    'icon' => '',
-   'previewUrl' => '/book',
+   'previewUrl' => '',
    'group' => '',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',

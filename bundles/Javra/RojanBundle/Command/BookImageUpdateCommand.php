@@ -3,6 +3,7 @@
 namespace Javra\RojanBundle\Command;
 
 use Pimcore\Model\Asset;
+use Pimcore\Model\Asset\Image;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\Book;
 use Pimcore\Console\AbstractCommand;
@@ -24,13 +25,15 @@ class BookImageUpdateCommand extends AbstractCommand{
         $images = new Asset\Listing();
         $images->load();
         //store id of all images
-        $images_id = []; 
+        $images_id = [];
         foreach( $images as $image ){
             if( $image->getFullPath() == "/Book" ){
                 continue;
             }
             $images_id[] = $image->getId();
         }
+
+
         $objects = new DataObject\Book\Listing();
         $objects->setUnpublished(true);
         $objects->load();

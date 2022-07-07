@@ -25,7 +25,9 @@
       "Javra\\RojanBundle\\": "bundles/Javra/RojanBundle",
       "Javra\\CalculateBundle\\": "bundles/Javra/CalculateBundle",
       "Javra\\TaskBundle\\": "bundles/Javra/TaskBundle",
-      "Javra\\TaskBundle\\EventListener\\" : "bundles/Javra/TaskBundle/EventListener"
+      "Javra\\TaskBundle\\EventListener\\" : "bundles/Javra/TaskBundle/EventListener",
+      "PIM\\Bundle\\": "bundles/PIM/Bundle",
+      "PIM\\ObjectWithVariableDatatypeBundle\\": "bundles/PIM/ObjectWithVariableDatatypeBundle"
     }
   },
   "scripts": {

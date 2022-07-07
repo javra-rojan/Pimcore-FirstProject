@@ -8,7 +8,14 @@ pimcore:
             - bundles/Javra/RojanBundle
             - bundles/Javra/CalculateBundle
             - bundles/Javra/TaskBundle
-            
+            - bundles/PIM/Bundle
+            - bundles/PIM/ObjectWithVariableDatatypeBundle
+
+    objects:
+        class_definitions:
+            data:
+                map:
+                    myDataType: bundles\PIM\ObjectWithVariableDatatypeBundle\Pimcore\Model\DataObject\ClassDefinition\Data\ObjectWithVariableDatatype
 
 
 # IMPORTANT Notice!

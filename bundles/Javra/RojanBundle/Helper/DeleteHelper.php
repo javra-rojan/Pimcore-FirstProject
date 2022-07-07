@@ -13,14 +13,14 @@ class DeleteHelper{
     public function __construct($class_name){
         $this->class_name = $class_name;
     }
-    
+
     public function deleteAssets(){
         //exclude deletion of root node
         $root_node_paths =  ['/', '/Book'];
         $assets = new Asset\Listing();
         $assets->load();
         foreach($assets as $asset)
-        { 
+        {
             if( ! in_array($asset->getFullPath(), $root_node_paths) ){
                 echo $asset->getFileName(). " deleted";
                 echo "<br>";
@@ -46,8 +46,8 @@ class DeleteHelper{
     }
 
     private function deleteCategoryObjects(){
-        $obj_list = new DataObject\Category\Listing();
-        $obj_list->load();
+        $obj_list = DataObject::getByPath('/Seed/Category');
+//        $obj_list->load();
         self::deleteObjects($obj_list);
         echo "Category objects deletion success!! <br>";
 
@@ -55,7 +55,7 @@ class DeleteHelper{
 
     private function deleteObjects($objs){
         foreach($objs as $obj)
-        {   
+        {
             echo $obj->getKey();
             echo "<br>";
             $obj->delete();

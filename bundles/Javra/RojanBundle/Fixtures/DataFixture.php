@@ -7,6 +7,7 @@ use Javra\RojanBundle\Fixtures;
 use Pimcore\Model\DataObject\Service;
 use Pimcore\Model\DataObject\Category;
 use Symfony\Component\HttpFoundation\Response;
+use Carbon\Carbon;
 
 class DataFixture{
     private static $cat_name = array('Fiction', 'Romance', 'Sadistic', 'War', 'Friendship', 'Marriage', 'Mystey', 'Horror', 'Western', 'Fantasy', 'History', 'Comedy');
@@ -40,7 +41,7 @@ class DataFixture{
         for( $j = 0; $j < 10; $j++){
             $newObj = new DataObject\Book();
             //path set for parent folder
-            $newObj->setParent(Service::createFolderByPath('Seed/Book')); 
+            $newObj->setParent(Service::createFolderByPath('Seed/Book'));
             $newObj->setKey("Book " .rand());
             $newObj->setTitle("book" .rand());
             $newObj->setImage(Asset::getById(51));
@@ -51,9 +52,10 @@ class DataFixture{
     }
 
     public static function seedCategory(){
+        $parent = Service::createFolderByPath('Seed/Category/CategorySeed ' .Carbon::now());
         for($i = 0; $i < count( self::$cat_name ); $i++){
             $newObj = new DataObject\Category();
-            $newObj->setParent(Service::createFolderByPath('Seed/Category'));
+            $newObj->setParent($parent);
             $newObj->setKey("Category " .$i);
             $newObj->setName(self::$cat_name[$i]);
             $newObj->setPublished(true);
@@ -66,21 +68,21 @@ class DataFixture{
     public static function attachCategoryToBook(){
         //get list of category id
         $categories_id = self::getCategoriesIndices();
-    
+
         //assign category to books
         $books = new DataObject\Book\Listing();
         $books->setUnpublished(true);
         $books->load();
         $loaded_cat_ids = [];
         foreach($books as $book)
-        {  
+        {
             $categories = [];
             $indices = array_rand($categories_id, 2);
             foreach($indices as $index){
                 $id = $categories_id[$index];
-                if(in_array($id, $loaded_cat_ids)){
-                    continue;
-                }
+//                if(in_array($id, $loaded_cat_ids)){
+//                    continue;
+//                }
                 $loaded_cat_ids[] = $id;
                 $categories[] = Dataobject\Category::getById($id);
             }

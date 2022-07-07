@@ -19,10 +19,10 @@ class ImageUpdateCommand extends AbstractCommand{
 
         $images = new Asset\Listing();
         $images->setCondition("filename like 'book asset %'");
-        
+
         foreach($images as $image){
             $output->writeln('Processing asset ' .$image->getId());
-            $image->addMetaData('expire', 'date', time());
+            $image->addMetadata('expire', 'date', time());
             $image->save();
         }
         $output->writeln('image update command executed successfully');

@@ -1,6 +1,5 @@
 pimcore.registerNS("pimcore.plugin.csvImport");
 
-
 pimcore.plugin.csvImport = Class.create(pimcore.plugin.admin, {
     getClassName: function() {
         return "pimcore.plugin.csvImport";
