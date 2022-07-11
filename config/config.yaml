@@ -11,11 +11,48 @@ pimcore:
             - bundles/PIM/Bundle
             - bundles/PIM/ObjectWithVariableDatatypeBundle
 
-    objects:
-        class_definitions:bundles
-            data:
-                map:
-                    myDataType: \PIM\ObjectWithVariableDatatypeBundle\Pimcore\Model\DataObject\ClassDefinition\Data\ObjectWithVariableDatatype
+    workflows:
+        workflow:
+            label: 'Product workflow'
+            type: 'state_machine'
+            supports:
+                - 'Pimcore\Model\DataObject\Product'
+            places:
+                start:
+                    label: 'Initial Product'
+                    permissions:
+                        - objectLayout: 2
+                progress:
+                    label: 'In Progress'
+                    permissions:
+                        - objectLayout: 3
+                complete:
+                    label: 'Complete'
+                    permissions:
+                        - objectLayout: 4
+            transitions:
+                to_progress:
+                    from: start
+                    to: progress
+                    options:
+                        label: 'enter product into progress'
+                to_complete:
+                    from: progress
+                    to: complete
+                    options:
+                        label: 'update product status'
+                to_new:
+                    from: complete
+                    to: start
+                    options:
+                        label: 'Update initial product'
+
+
+#    objects:
+#        class_definitions:bundles
+#            data:
+#                map:
+#                    myDataType: \PIM\ObjectWithVariableDatatypeBundle\Pimcore\Model\DataObject\ClassDefinition\Data\ObjectWithVariableDatatype
 
 
 # IMPORTANT Notice!

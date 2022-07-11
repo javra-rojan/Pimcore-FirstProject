@@ -13,7 +13,6 @@
  * - status [booleanSelect]
  * - added_date [datetime]
  * - product_type [select]
- * - is_simple [checkbox]
  * - accessories [objectbricks]
  */
 
@@ -23,7 +22,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Product',
    'description' => 'contains list of product with types',
    'creationDate' => 0,
-   'modificationDate' => 1655891766,
+   'modificationDate' => 1657537337,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -272,7 +271,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -306,29 +305,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           7 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'name' => 'is_simple',
-             'title' => 'is _simple',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'checkbox',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'defaultValueGenerator' => '',
-          )),
-          8 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -442,6 +418,31 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
+    0 => 
+    Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
+       'name' => 'is_simple',
+       'title' => 'is _simple',
+       'tooltip' => '',
+       'mandatory' => false,
+       'noteditable' => false,
+       'index' => false,
+       'locked' => false,
+       'style' => '',
+       'permissions' => NULL,
+       'datatype' => 'data',
+       'fieldtype' => 'checkbox',
+       'relationType' => false,
+       'invisible' => false,
+       'visibleGridView' => false,
+       'visibleSearch' => false,
+       'blockedVarsForExport' => 
+      array (
+      ),
+       'defaultValue' => NULL,
+       'queryColumnType' => 'tinyint(1)',
+       'columnType' => 'tinyint(1)',
+       'defaultValueGenerator' => '',
+    )),
   ),
    'blockedVarsForExport' => 
   array (

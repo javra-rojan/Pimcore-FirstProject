@@ -1,5 +1,0 @@
-object_with_variable_datatype:
-    resource: "@ObjectWithVariableDatatypeBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
