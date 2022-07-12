@@ -9,14 +9,17 @@ pimcore:
             - bundles/Javra/CalculateBundle
             - bundles/Javra/TaskBundle
             - bundles/PIM/Bundle
-            - bundles/PIM/ObjectWithVariableDatatypeBundle
+#            - bundles/PIM/ObjectWithVariableDatatypeBundle
 
     workflows:
         workflow:
+            enabled: true
             label: 'Product workflow'
             type: 'state_machine'
-            supports:
-                - 'Pimcore\Model\DataObject\Product'
+#            supports:
+#                - 'Pimcore\Model\DataObject\Product'
+            support_strategy:
+                service: PIM\Bundle\Workflow\SupportStrategy
             places:
                 start:
                     label: 'Initial Product'

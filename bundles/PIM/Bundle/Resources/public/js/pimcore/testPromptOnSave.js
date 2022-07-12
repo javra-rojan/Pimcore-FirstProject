@@ -10,7 +10,7 @@ pimcore.plugin.Test = Class.create(pimcore.plugin.admin,{
     },
 
     pimcoreReady: function (params, broker){
-        alert("Test js activated");
+        // alert("Test js activated");
     },
 
     preSaveObject: function (object , type){

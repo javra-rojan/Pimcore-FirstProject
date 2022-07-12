@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Inheritance: no
- * Variants: no
+ * Inheritance: yes
+ * Variants: yes
  *
  * Fields Summary:
  * - title [input]
  * - image [image]
  * - categories [manyToManyObjectRelation]
+ * - cover_type [input]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -16,7 +17,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Book',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1656932100,
+   'modificationDate' => 1657606194,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -28,8 +29,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-   'allowInherit' => false,
-   'allowVariants' => false,
+   'allowInherit' => true,
+   'allowVariants' => true,
    'showVariants' => false,
    'fieldDefinitions' => 
   array (
@@ -157,6 +158,38 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleFieldDefinitions' => 
             array (
             ),
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'cover_type',
+             'title' => 'Cover _type',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'input',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'width' => '',
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+              0 => 'HardCover',
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,

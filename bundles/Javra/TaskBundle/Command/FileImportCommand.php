@@ -46,6 +46,7 @@ class FileImportCommand extends AbstractCommand
         $product->setModel($row[2]);
         $product->setSKu($row[3]);
         $product->setStatus($row[4]);
+//        $product->setCover
         $product->setAdded_date( Carbon::parse( new DateTime(($row[5]), new DateTimeZone('Asia/Kathmandu')) ) );
         $product->setProduct_type($row[6]);
         $product->save();
