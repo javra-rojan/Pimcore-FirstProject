@@ -8,21 +8,12 @@ use Pimcore\Event\Model\DataObjectEvent;
 use Pimcore\Event\Model\ElementEventInterface;
 
 class ProductCreateListener {
-
-    public function onObjectPreUpdate (ElementEventInterface $e) {
-
-    if ($e instanceof DataObjectEvent) {
-            // do something with the object]
+    public function onObjectPostAdd (ElementEventInterface $e) {
+        if ($e instanceof DataObjectEvent) {
             $foo = $e->getObject();
-            if( $foo instanceof Product){
-                // var_dump($foo->getKey());
-                // die;
-//                $foo->setIs_simple(true);
-
+            if( $foo instanceof Product && $foo->getProduct_type() == 'simple'){
+                $foo->setAccessories(null);
             }
-            // $foo->save();
-            // $foo->setMyValue(microtime(true));
-            // we don't have to call save here as we are in the pre-update event anyway ;-)
         }
     }
 }

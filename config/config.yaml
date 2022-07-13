@@ -13,13 +13,13 @@ pimcore:
 
     workflows:
         workflow:
-            enabled: true
+            enabled: false
             label: 'Product workflow'
             type: 'state_machine'
 #            supports:
 #                - 'Pimcore\Model\DataObject\Product'
             support_strategy:
-                service: PIM\Bundle\Workflow\SupportStrategy
+                service: Javra\TaskBundle\Workflow\SupportStrategy
             places:
                 start:
                     label: 'Initial Product'

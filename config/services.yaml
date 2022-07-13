@@ -80,4 +80,4 @@ services:
     # Example event listener for objects
     Javra\TaskBundle\EventListener\ProductCreateListener:
         tags:
-            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: onObjectPreUpdate }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPostAdd }

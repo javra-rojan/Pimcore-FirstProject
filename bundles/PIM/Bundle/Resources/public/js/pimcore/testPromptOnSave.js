@@ -14,10 +14,10 @@ pimcore.plugin.Test = Class.create(pimcore.plugin.admin,{
     },
 
     preSaveObject: function (object , type){
-        var answer = confirm("do you want to save " + object.data.general.o_className + "?");
-        if ( !answer ){
-            throw new pimcore.error.ActionCancelledException("User cancelled this operation");
-        }
+        // var answer = confirm("do you want to save " + object.data.general.o_className + "?");
+        // if ( !answer ){
+        //     throw new pimcore.error.ActionCancelledException("User cancelled this operation");
+        // }
     }
 });
 
