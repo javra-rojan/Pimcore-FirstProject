@@ -9,11 +9,12 @@ pimcore:
             - bundles/Javra/CalculateBundle
             - bundles/Javra/TaskBundle
             - bundles/PIM/Bundle
+            - bundles/Javra/ImportFromJsonBundle
 #            - bundles/PIM/ObjectWithVariableDatatypeBundle
 
     workflows:
         workflow:
-            enabled: false
+            enabled: true
             label: 'Product workflow'
             type: 'state_machine'
 #            supports:

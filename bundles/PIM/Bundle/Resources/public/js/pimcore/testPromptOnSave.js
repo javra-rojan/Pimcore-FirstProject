@@ -14,7 +14,15 @@ pimcore.plugin.Test = Class.create(pimcore.plugin.admin,{
     },
 
     preSaveObject: function (object , type){
-        // var answer = confirm("do you want to save " + object.data.general.o_className + "?");
+        console.log(object);
+        if( object.data.general.o_className === "Person"){
+            alert(object.data.data.salutation+ " " +object.data.data.name);
+            // console.log( object.data.data.salutation === "" );
+            if( object.data.data.salutation  === "" ){
+                throw new pimcore.error.ValidationException("Name must have salutation");
+            }
+        }
+
         // if ( !answer ){
         //     throw new pimcore.error.ActionCancelledException("User cancelled this operation");
         // }

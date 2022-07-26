@@ -8,6 +8,7 @@ return [
         "Javra\\CalculateBundle\\JavraCalculateBundle" => TRUE,
         "Javra\\TaskBundle\\JavraTaskBundle" => TRUE,
         "PIM\\Bundle\\RelationsBundle" => TRUE,
-        "PIM\\Bundle\\PIMRelationsBundle" => TRUE
+        "PIM\\Bundle\\PIMRelationsBundle" => TRUE,
+        "Javra\\ImportFromJsonBundle\\ImportFromJsonBundle" => TRUE
     ]
 ];

@@ -1,22 +1,21 @@
 <?php
 
 /**
-*/
+ * Fields Summary:
+ * - methodCode [numeric]
+ * - defaultDecoration [booleanSelect]
+ */
 
-
-return Pimcore\Model\DataObject\ClassDefinition\CustomLayout::__set_state(array(
+return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'dao' => NULL,
-   'id' => '3',
-   'name' => 'Product In Progress',
-   'description' => '',
-   'creationDate' => 1657537274,
-   'modificationDate' => 1657714500,
-   'userOwner' => 2,
-   'userModification' => 0,
-   'classId' => '6',
+   'key' => 'Method',
+   'parentClass' => '',
+   'implementsInterfaces' => '',
+   'title' => '',
+   'group' => '',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'name' => 'pimcore_root',
+     'name' => NULL,
      'type' => NULL,
      'region' => NULL,
      'title' => NULL,
@@ -45,18 +44,18 @@ return Pimcore\Model\DataObject\ClassDefinition\CustomLayout::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Datetime::__set_state(array(
-             'name' => 'added_date',
-             'title' => 'Added _date',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'methodCode',
+             'title' => 'Method Code',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'datetime',
+             'fieldtype' => 'numeric',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -64,25 +63,30 @@ return Pimcore\Model\DataObject\ClassDefinition\CustomLayout::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'queryColumnType' => 'bigint(20)',
-             'columnType' => 'bigint(20)',
+             'width' => '',
              'defaultValue' => NULL,
-             'useCurrentDate' => false,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'accessories',
-             'title' => 'accessories',
+          Pimcore\Model\DataObject\ClassDefinition\Data\BooleanSelect::__set_state(array(
+             'name' => 'defaultDecoration',
+             'title' => 'Default Decoration',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'objectbricks',
+             'fieldtype' => 'booleanSelect',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -90,13 +94,28 @@ return Pimcore\Model\DataObject\ClassDefinition\CustomLayout::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'allowedTypes' => 
+             'yesLabel' => 'yes',
+             'noLabel' => 'no',
+             'emptyLabel' => 'empty',
+             'options' => 
             array (
-              0 => 'Memory',
-              1 => 'Storage',
+              0 => 
+              array (
+                'key' => 'empty',
+                'value' => 0,
+              ),
+              1 => 
+              array (
+                'key' => 'yes',
+                'value' => 1,
+              ),
+              2 => 
+              array (
+                'key' => 'no',
+                'value' => -1,
+              ),
             ),
-             'maxItems' => '',
-             'border' => false,
+             'width' => '',
           )),
         ),
          'locked' => false,
@@ -122,11 +141,8 @@ return Pimcore\Model\DataObject\ClassDefinition\CustomLayout::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'default' => 0,
+   'generateTypeDeclarations' => true,
    'blockedVarsForExport' => 
-  array (
-  ),
-   'activeDispatchingEvents' => 
   array (
   ),
 ));

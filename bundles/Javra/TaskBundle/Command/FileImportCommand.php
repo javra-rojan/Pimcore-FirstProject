@@ -16,7 +16,7 @@ class FileImportCommand extends AbstractCommand
     protected function configure()
     {
         $this
-            ->setName('app:ImportCSVFile')
+            ->setName('app:import:file:csv')
             ->setDescription('command to import CSV file');
     }
 

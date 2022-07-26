@@ -3,6 +3,7 @@
 namespace Javra\TaskBundle\Controller;
 
 use Google\Service\Analytics\Resource\Data;
+use Google\Service\AndroidPublisher\Bundle;
 use Pimcore\Model\DataObject\Book;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\Product;
@@ -11,6 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Pimcore\Model\Version;
 
 class DefaultController extends FrontendController
 {

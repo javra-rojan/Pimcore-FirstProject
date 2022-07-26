@@ -5,19 +5,18 @@
  * Variants: no
  *
  * Fields Summary:
- * - salutation [select]
- * - name [input]
- * - roles [manyToManyObjectRelation]
- * - vehicles [reverseObjectRelation]
+ * - orientationCode [numeric]
+ * - model [manyToOneRelation]
+ * - locations [reverseObjectRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '7',
-   'name' => 'Person',
+   'id' => '11',
+   'name' => 'Orientation',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1658145506,
+   'modificationDate' => 1658826836,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -66,50 +65,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
-             'name' => 'salutation',
-             'title' => 'Salutation',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => NULL,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'fieldtype' => 'select',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'options' => 
-            array (
-              0 => 
-              array (
-                'key' => 'Mr',
-                'value' => 'Mr',
-              ),
-              1 => 
-              array (
-                'key' => 'Mrs',
-                'value' => 'Mrs',
-              ),
-            ),
-             'width' => '',
-             'defaultValue' => '',
-             'optionsProviderClass' => '',
-             'optionsProviderData' => '',
-             'columnLength' => 190,
-             'dynamicOptions' => false,
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'name',
-             'title' => 'Name',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'orientationCode',
+             'title' => 'Orientation Code',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -118,7 +76,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'input',
+             'fieldtype' => 'numeric',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -128,28 +86,28 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'width' => '',
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'defaultValueGenerator' => '',
           )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'name' => 'roles',
-             'title' => 'Roles',
+          1 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'name' => 'model',
+             'title' => 'Model',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'manyToManyObjectRelation',
+             'fieldtype' => 'manyToOneRelation',
              'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
@@ -159,34 +117,29 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'classes' => 
             array (
-              0 => 
-              array (
-                'classes' => 'Role',
-              ),
             ),
              'pathFormatterClass' => '',
              'width' => '',
-             'height' => '',
-             'maxItems' => '',
-             'visibleFields' => 
+             'assetUploadPath' => '',
+             'objectsAllowed' => false,
+             'assetsAllowed' => false,
+             'assetTypes' => 
             array (
             ),
-             'allowToCreateNewObject' => false,
-             'optimizedAdminLoading' => false,
-             'enableTextSelection' => false,
-             'visibleFieldDefinitions' => 
+             'documentsAllowed' => false,
+             'documentTypes' => 
             array (
             ),
           )),
-          3 => 
+          2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ReverseObjectRelation::__set_state(array(
-             'name' => 'vehicles',
-             'title' => 'Own vehicles(reverse relation)',
+             'name' => 'locations',
+             'title' => 'Locations',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -204,7 +157,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'pathFormatterClass' => '',
              'width' => '',
              'height' => '',
-             'maxItems' => '',
+             'maxItems' => NULL,
              'visibleFields' => NULL,
              'allowToCreateNewObject' => true,
              'optimizedAdminLoading' => false,
@@ -212,9 +165,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'visibleFieldDefinitions' => 
             array (
             ),
-             'ownerClassName' => 'Vehicle',
+             'ownerClassName' => 'Location',
              'ownerClassId' => NULL,
-             'ownerFieldName' => 'owned_by',
+             'ownerFieldName' => 'Orienatation',
              'lazyLoading' => true,
           )),
         ),

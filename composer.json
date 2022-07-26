@@ -27,8 +27,10 @@
       "Javra\\TaskBundle\\": "bundles/Javra/TaskBundle",
       "Javra\\TaskBundle\\EventListener\\" : "bundles/Javra/TaskBundle/EventListener",
       "PIM\\Bundle\\": "bundles/PIM/Bundle",
-      "PIM\\ObjectWithVariableDatatypeBundle\\": "bundles/PIM/ObjectWithVariableDatatypeBundle"
-    }
+      "PIM\\ObjectWithVariableDatatypeBundle\\": "bundles/PIM/ObjectWithVariableDatatypeBundle",
+      "Javra\\ImportFromJsonBundle\\": "bundles/Javra/ImportFromJsonBundle"
+    },
+    "files": ["bundles/Javra/ImportFromJsonBundle/HelperFunctions/Functions.php"]
   },
   "scripts": {
     "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",

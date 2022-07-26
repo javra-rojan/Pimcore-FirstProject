@@ -17,7 +17,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Book',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1657606194,
+   'modificationDate' => 1658225886,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -185,7 +185,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'regex' => '',
              'regexFlags' => 
             array (
-              0 => 'HardCover',
             ),
              'unique' => false,
              'showCharCount' => false,
