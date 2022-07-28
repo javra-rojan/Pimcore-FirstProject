@@ -6,7 +6,7 @@
  *
  * Fields Summary:
  * - orientationCode [numeric]
- * - model [manyToOneRelation]
+ * - decorationModel [manyToOneRelation]
  * - locations [reverseObjectRelation]
  */
 
@@ -16,7 +16,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Orientation',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1658826836,
+   'modificationDate' => 1658982652,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -97,13 +97,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'name' => 'model',
-             'title' => 'Model',
+             'name' => 'decorationModel',
+             'title' => 'decoration Model',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -117,11 +117,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'classes' => 
             array (
+              0 => 
+              array (
+                'classes' => 'DecorationModel',
+              ),
             ),
              'pathFormatterClass' => '',
              'width' => '',
              'assetUploadPath' => '',
-             'objectsAllowed' => false,
+             'objectsAllowed' => true,
              'assetsAllowed' => false,
              'assetTypes' => 
             array (
@@ -139,7 +143,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -157,7 +161,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'pathFormatterClass' => '',
              'width' => '',
              'height' => '',
-             'maxItems' => NULL,
+             'maxItems' => '',
              'visibleFields' => NULL,
              'allowToCreateNewObject' => true,
              'optimizedAdminLoading' => false,
@@ -167,7 +171,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             ),
              'ownerClassName' => 'Location',
              'ownerClassId' => NULL,
-             'ownerFieldName' => 'Orienatation',
+             'ownerFieldName' => 'orientation',
              'lazyLoading' => true,
           )),
         ),

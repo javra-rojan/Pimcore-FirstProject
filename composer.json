@@ -30,7 +30,10 @@
       "PIM\\ObjectWithVariableDatatypeBundle\\": "bundles/PIM/ObjectWithVariableDatatypeBundle",
       "Javra\\ImportFromJsonBundle\\": "bundles/Javra/ImportFromJsonBundle"
     },
-    "files": ["bundles/Javra/ImportFromJsonBundle/HelperFunctions/Functions.php"]
+    "files": [
+      "bundles/Javra/ImportFromJsonBundle/Helper/Functions.php",
+      "bundles/Javra/ImportFromJsonBundle/Resources/config/constants.php"
+    ]
   },
   "scripts": {
     "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
