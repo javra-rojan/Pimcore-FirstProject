@@ -31,8 +31,7 @@
       "Javra\\ImportFromJsonBundle\\": "bundles/Javra/ImportFromJsonBundle"
     },
     "files": [
-      "bundles/Javra/ImportFromJsonBundle/Helper/Functions.php",
-      "bundles/Javra/ImportFromJsonBundle/Resources/config/constants.php"
+      "bundles/Javra/ImportFromJsonBundle/Helper/Functions.php"
     ]
   },
   "scripts": {

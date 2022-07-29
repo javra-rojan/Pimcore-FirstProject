@@ -12,7 +12,7 @@ class DecorationModelBuilder implements BuilderInterface {
 
     public function __construct($modelCode){
         $this->reset($modelCode);
-        $this->importPath = DataObject::getByPath($storePath);
+        $this->importPath = DataObject::getByPath("/ImportFromJson");
     }
 
     public function reset($modelCode){
@@ -34,20 +34,16 @@ class DecorationModelBuilder implements BuilderInterface {
         $this->orientation->save();
     }
 
-    public function createCollectionMethods($methodCollections)
+    public function createCollectionMethods($methodCollections): Fieldcollection
     {
         $fieldCollection = new Fieldcollection();
         foreach ($methodCollections as $method){
             $this->methodFC = new Fieldcollection\Data\Method();
             $this->methodFC->setMethodCode($method['MethodCode']);
             $this->methodFC->setDefaultDecoration($method['DefaultDecoration']);
-            $fieldCollection->add($method);
-//            print_r( $method['MethodCode'] .PHP_EOL);
-
+            $fieldCollection->add($this->methodFC);
         }
-        $this->location->setMethods($fieldCollection);
-        print_r( $this->location->getLocationCode() .PHP_EOL);
-        $this->location->save();
+        return $fieldCollection;
     }
 
     public function createObjectLocations($location)
@@ -59,6 +55,7 @@ class DecorationModelBuilder implements BuilderInterface {
         $this->location->setCommImpNameCode((int)$location['CommImpNameCode']);
         $this->location->setCommImpLocationCode((int)$location['CommImpLocationCode']);
         $this->location->setOrientation($this->orientation);
+        $this->location->setMethods($this->createCollectionMethods($location['Methods']));
         $this->location->save();
     }
 

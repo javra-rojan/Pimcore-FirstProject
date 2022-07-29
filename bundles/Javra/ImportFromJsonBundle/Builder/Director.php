@@ -19,10 +19,7 @@ class Director{
             $locations = $orientation["Locations"];
             foreach ( $locations as $location ){
                 $this->builder->createObjectLocations($location);
-                $methods = $location["Methods"];
-                $this->builder->createCollectionMethods($methods);
             }
         }
-//
     }
 }

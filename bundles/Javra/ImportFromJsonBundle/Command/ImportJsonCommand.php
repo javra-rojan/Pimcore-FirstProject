@@ -24,9 +24,8 @@ class ImportJsonCommand extends AbstractCommand
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-//        $filename = $this->getInputFilename($input, $output);
         try{
-            $filename = '/home/rojan/Downloads/pim.json';
+            $filename = $this->getInputFilename($input, $output);
             is_file($filename) ? $this->writeInfo("File exists. \n \t Starting Import ... ") : $this->writeError('File does not exist');
             $contents = json_decode( file_get_contents( $filename ), true );
         }
