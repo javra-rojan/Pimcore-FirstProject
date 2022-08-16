@@ -10,3 +10,11 @@ app:
 #     controller: bundles/Javra/RojanBundle/Controller/DefaultController::indexAction
 #     methods: GET
 
+#
+#admin_pimcoredatahub_config:
+#    path: /pimcore-datahub-webservices-my-endpoint/explorer/javra
+#    defaults: { _controller: PimcoreDataHubBundle:GraphQLExplorer:explorer }
+#
+#admin_pimcoredatahub_webservice:
+#    path: /pimcore-graphql-webservices-my-endpoint/javra
+#    defaults: { _controller: PimcoreDataHubBundle:Webservice:webonyx }

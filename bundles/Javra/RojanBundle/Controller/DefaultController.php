@@ -29,30 +29,18 @@ class DefaultController extends FrontendController
 
     /**
      * @Route("/javra_rojan/books", name="bundle_book_list")
-     * 
+     *
      */
     public function indexAction()
-    {   
-        $books = new DataObject\Book\Listing();
-        $data = [];
-        foreach($books as $book){
-            $data[] = [
-                'id' => $book->getId(),
-                'key' => $book->getKey(),
-                'title' => $book->getTitle()
-            ];
-        }
-        return $this->render('Book/list.html.twig', [
-            'books' => $books
-        ]);
-        // return new JsonResponse($data) ;
+    {
+         return new Response("ok");
     }
 
     /**
      * @Route("/javra_rojan/delete", name="book_delete")
      */
     public function deleteAction(DeleteHelper $deleter): Response
-    {   
+    {
         $deleter->deleteDataObjects();
         $deleter->deleteAssets();
         return new Response('Delete Successfully');

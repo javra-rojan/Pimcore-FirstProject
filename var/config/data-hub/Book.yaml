@@ -1,0 +1,229 @@
+pimcore_data_hub:
+    configurations:
+        Book:
+            general:
+                active: true
+                type: graphql
+                name: Book
+                description: ''
+                group: ''
+                sqlObjectCondition: 'oo_id  > 1000'
+                modificationDate: 1660559968
+                path: null
+                createDate: 1659695209
+            schema:
+                queryEntities:
+                    Book:
+                        id: Book
+                        name: Book
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: image
+                                        label: Image
+                                        dataType: image
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categories
+                                        label: Categories
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        label: 'ID (id)'
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: fullpath
+                                        label: 'Full Path'
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: creationDate
+                                        label: 'Creation Date'
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    isOperator: true
+                                    attributes:
+                                        label: title_concat
+                                        type: operator
+                                        class: Concatenator
+                                        glue: ' '
+                                        childs:
+                                            -
+                                                isOperator: false
+                                                attributes:
+                                                    label: Title
+                                                    type: value
+                                                    class: DefaultValue
+                                                    attribute: title
+                                                    dataType: input
+                                                    childs: {  }
+                                            -
+                                                isOperator: false
+                                                attributes:
+                                                    label: cover_type
+                                                    type: value
+                                                    class: DefaultValue
+                                                    attribute: cover_type
+                                                    dataType: input
+                                                    childs: {  }
+                                    key: '#62fa225eb17c2'
+                    Category:
+                        id: Category
+                        name: Category
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: fullpath
+                                        label: fullpath
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: creationDate
+                                        label: creationDate
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: Name
+                                        dataType: input
+                                    isOperator: false
+                mutationEntities:
+                    Category:
+                        id: Category
+                        name: Category
+                        update: true
+                        create: true
+                        delete: true
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: Name
+                                        dataType: input
+                                    isOperator: false
+                    Book:
+                        id: Book
+                        name: Book
+                        update: true
+                        create: true
+                        delete: true
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: title
+                                        label: Title
+                                        dataType: input
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: categories
+                                        label: Categories
+                                        dataType: manyToManyObjectRelation
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: id
+                                        label: id
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: creationDate
+                                        label: creationDate
+                                        dataType: system
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: fullpath
+                                        label: fullpath
+                                        dataType: system
+                                    isOperator: false
+                specialEntities:
+                    document:
+                        read: false
+                        create: false
+                        update: false
+                        delete: true
+                    document_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: true
+                        create: false
+                        update: true
+                        delete: true
+                    asset_folder:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: false
+                        create: false
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: true
+                        create: true
+                        update: true
+                        delete: true
+            security:
+                method: datahub_apikey
+                apikey: rojan.karki@Book
+                skipPermissionCheck: false
+                disableIntrospection: true
+            workspaces:
+                asset:
+                    -
+                        read: true
+                        cpath: /Book
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel920-1
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: /Seed/Book/Category
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel946-1
+                    -
+                        read: true
+                        cpath: /Seed/Book
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel946-2
+                    -
+                        read: true
+                        cpath: /Graphql
+                        create: true
+                        update: true
+                        delete: true
+                        id: extModel439-1
+            permissions:
+                user: {  }
+                role: {  }

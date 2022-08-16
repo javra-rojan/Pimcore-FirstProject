@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class ImportFromJsonExtension extends Extension
 {
+
     /**
      * {@inheritdoc}
      */
@@ -24,5 +25,7 @@ class ImportFromJsonExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+//        $loader->load('config.yml');
+//        return $config;
     }
 }

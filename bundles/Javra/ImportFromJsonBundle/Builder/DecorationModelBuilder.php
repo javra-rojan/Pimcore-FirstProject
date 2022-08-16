@@ -2,6 +2,7 @@
 namespace Javra\ImportFromJsonBundle\Builder;
 
 use Carbon\Carbon;
+use Javra\ImportFromJsonBundle\Constants\Constants;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\DecorationModel;
 use Pimcore\Model\DataObject\Fieldcollection;
@@ -12,12 +13,12 @@ class DecorationModelBuilder implements BuilderInterface {
 
     public function __construct($modelCode){
         $this->reset($modelCode);
-        $this->importPath = DataObject::getByPath("/ImportFromJson");
+        $this->importPath = DataObject::getByPath(Constants::storePath);
     }
 
     public function reset($modelCode){
         $this->model = new DecorationModel();
-        $this->model->setParent( DataObject::getByPath("/ImportFromJson"));
+        $this->model->setParent( DataObject::getByPath(Constants::storePath));
         $this->model->setKey("Decoration " .rand(1,100). " " .Carbon::now());
         $this->model->setModelCode($modelCode);
         $this->model->save();

@@ -10,15 +10,15 @@ pimcore:
             - bundles/Javra/TaskBundle
             - bundles/PIM/Bundle
             - bundles/Javra/ImportFromJsonBundle
-#            - bundles/PIM/ObjectWithVariableDatatypeBundle
+    #            - bundles/PIM/ObjectWithVariableDatatypeBundle
 
     workflows:
         workflow:
             enabled: true
             label: 'Product workflow'
             type: 'state_machine'
-#            supports:
-#                - 'Pimcore\Model\DataObject\Product'
+            #            supports:
+            #                - 'Pimcore\Model\DataObject\Product'
             support_strategy:
                 service: Javra\TaskBundle\Workflow\SupportStrategy
             places:
@@ -40,6 +40,12 @@ pimcore:
                     to: progress
                     options:
                         label: 'enter product into progress'
+
+                to_invalid:
+                    from: start
+                    to: complete
+                    options:
+                        label: 'enter product into invalid complete'
                 to_complete:
                     from: progress
                     to: complete
@@ -50,6 +56,10 @@ pimcore:
                     to: start
                     options:
                         label: 'Update initial product'
+
+pimcore_data_hub:
+    graphql:
+        not_allowed_policy: 2
 
 
 #    objects:

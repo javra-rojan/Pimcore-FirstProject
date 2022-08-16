@@ -9,6 +9,7 @@ return [
         "Javra\\TaskBundle\\JavraTaskBundle" => TRUE,
         "PIM\\Bundle\\RelationsBundle" => TRUE,
         "PIM\\Bundle\\PIMRelationsBundle" => TRUE,
-        "Javra\\ImportFromJsonBundle\\ImportFromJsonBundle" => TRUE
+        "Javra\\ImportFromJsonBundle\\ImportFromJsonBundle" => TRUE,
+        "Pimcore\\Bundle\\DataHubBundle\\PimcoreDataHubBundle" => TRUE
     ]
 ];

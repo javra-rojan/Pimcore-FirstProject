@@ -40,7 +40,10 @@ services:
         # if you need to do this, you can override this setting on individual services
         public: false
 
-
+#
+#    Javra\TaskBundle\Controller\DefaultController:
+#        arguments:
+#            $name: "%app.name%"
 
     # JavraRojanBundle:
     #     class:  Javra\RojanBundle\JavraRojanBundle

@@ -17,7 +17,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Book',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1658225886,
+   'modificationDate' => 1660215715,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -150,7 +150,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'pathFormatterClass' => '',
              'width' => '',
              'height' => '',
-             'maxItems' => '',
+             'maxItems' => NULL,
              'visibleFields' => 'name',
              'allowToCreateNewObject' => true,
              'optimizedAdminLoading' => false,
@@ -162,7 +162,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'cover_type',
-             'title' => 'Cover _type',
+             'title' => 'cover_type',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,

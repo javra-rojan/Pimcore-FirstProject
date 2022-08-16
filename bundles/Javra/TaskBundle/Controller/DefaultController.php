@@ -8,6 +8,7 @@ use Pimcore\Model\DataObject\Book;
 use Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\Product;
 use Pimcore\Controller\FrontendController;
+use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,16 +17,21 @@ use Pimcore\Model\Version;
 
 class DefaultController extends FrontendController
 {
+
+    private ?string $param = null;
+    public function __construct(string $params){
+        $this->param = $params;
+    }
     /**
      * @Route("/javra_task")
      */
     public function indexAction(Request $request)
     {
-        $products = DataObject::getByPath('/Task');
-        if($products){
-            $products->delete();
-        }
-        return new Response('deleted ok');
+//        $products = DataObject::getByPath('/Task');
+//        if($products){
+//            $products->delete();
+//        }
+        return new Response($_ENV['db_url']);
     }
 
     /**
